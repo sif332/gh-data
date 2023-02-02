@@ -40,8 +40,8 @@ jobs:
     steps:
       - name: Get build artifacts
         uses: actions/download-artifact@v3
-          with:
-            name: dist-files
+        with:
+          name: dist-files
       - name: Output contents
         run: ls
       - name: Deploy
