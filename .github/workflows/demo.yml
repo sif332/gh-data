@@ -30,7 +30,7 @@ jobs:
         with:
           #artifact file's name
           name: dist-files
-          #path, where to find the files that should be stored (store file in "dist" folder)
+          #path, what files should be in "dist-files.zip"
           path: |
             dist
             package.json
@@ -38,5 +38,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+          with:
+            name: dist-files
+      - name: Output contents
+        run: ls
       - name: Deploy
         run: echo "Deploying..."
