@@ -31,9 +31,7 @@ jobs:
           #artifact file's name
           name: dist-files
           #path, what files should be in "dist-files.zip"
-          path: |
-            dist
-            package.json
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
